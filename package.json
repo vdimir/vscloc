@@ -1,0 +1,56 @@
+{
+	"name": "vscloc",
+	"displayName": "vscloc",
+	"description": "Display number of loc in ststus bar",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.50.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "vscloc.countLinesOfCode",
+				"title": "Cloc: Count Lines of Code"
+			}
+		],
+		"configuration": {
+			"title": "TypeScript",
+			"properties": {
+				"vscloc.format": {
+					"type": "string",
+					"default": "%t lines (%s sloc)",
+					"description": "Format to display loc info in status bar."
+				},
+				"vscloc.cmd": {
+					"type": "string",
+					"default": "cloc --json %f",
+					"description": "Command to run."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint src --ext ts",
+		"watch": "tsc -watch -p ./"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.50.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.0",
+		"@types/node": "^12.11.7",
+		"eslint": "^7.9.0",
+		"@typescript-eslint/eslint-plugin": "^4.1.1",
+		"@typescript-eslint/parser": "^4.1.1",
+		"glob": "^7.1.6",
+		"typescript": "^4.0.2"
+	}
+}
