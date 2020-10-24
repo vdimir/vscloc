@@ -13,6 +13,11 @@
 		"onStartupFinished"
 	],
 	"main": "./out/extension.js",
+	"icon": "assets/index.png",
+	"publisher": "vdimir",
+	"repository": {
+		"url": "https://github.com/vdimir/vscloc"
+	},
 	"contributes": {
 		"commands": [
 			{
